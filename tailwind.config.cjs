@@ -7,9 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'hsl(231, 77%, 90%)',
-        secondary: 'hsl(230, 35%, 7%)',
-        white: 'hsl(0, 0%, 100%)'
+        primary: '#D0D6F9',
+        secondary: '#0B0D17',
+        white: 'hsl(0, 0%, 100%)',
+        whiteBlur: 'hsla(0, 0%, 100%, 4%)',
+        borderColor: '#383B4B',
       },
       fontFamily: {
         barlow: ['Barlow', 'sans-serif'],
@@ -17,7 +19,10 @@ module.exports = {
         bellefair: ['Bellefair', 'serif']
       },
       backgroundImage: {
-        backgroundHome: "url('assets/home/background-home-mobile.jpg')"
+        backgroundHome: "url('assets/home/background-home-mobile.jpg')",
+        backgroundDestination: "url('assets/destination/background-destination-mobile.jpg')",
+        backgroundCrew: "url('assets/crew/background-crew-mobile.jpg')",
+        backgroundTechnology: "url('assets/technology/background-technology-mobile.jpg')",
       }
     },
   },
