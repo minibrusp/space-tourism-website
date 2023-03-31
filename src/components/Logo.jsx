@@ -6,7 +6,7 @@ function Logo() {
   return (
     <div className='logo'>
       <Link to="/">
-        <img src={homeLogo} alt="home logo" className='h-10 w-10 block'/>
+        <img src={homeLogo} alt="home logo" className='h-10 w-10 block md:h-12 md:w-12 md:max-w-none' />
       </Link>
     </div>
   )

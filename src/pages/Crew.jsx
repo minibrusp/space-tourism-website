@@ -13,22 +13,28 @@ export default function Crew() {
   const [ currentIndex, setCurrentIndex ] = useState(0)
   const [ currentCrew, setCurrentCrew ] = useState('')
 
+  
+
   useEffect(() => {
     setCurrentCrew(crews[currentIndex])
   }, [currentIndex])
 
 
   return (
-    <section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen'>
+    <section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundCrewTablet md:pt-[136px]'>
       
       <Heading title='Meet your crew' order='02' />
 
-      <HeroCrew data={currentCrew} />
+      <div className=" md:flex md:justify-center md:items-center md:flex-col-reverse md:gap-10" 
+        
+      >
+        <HeroCrew data={currentCrew} />
+        <TabCrew data={crews} currentData={currentCrew} setCurrentDataIndex={setCurrentIndex} />
+        <DescriptionCrew currentData={currentCrew} />
+      </div>
 
-      <TabCrew data={crews} currentData={currentCrew} setCurrentDataIndex={setCurrentIndex} />
       
 
-      <DescriptionCrew currentData={currentCrew} />
 
     </section>
   )

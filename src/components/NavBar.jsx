@@ -7,7 +7,7 @@ export default function NavBar() {
   const [ isBurgerOpen, setBurger] = useState(false) 
 
   return (
-    <nav className='flex justify-between items-center p-6 absolute w-full'>
+    <nav className='flex justify-between items-center p-6 absolute w-full md:p-0 md:pl-9'>
 
       <Logo />
       

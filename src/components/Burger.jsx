@@ -3,7 +3,7 @@ import iconClose from '../assets/shared/icon-close.svg'
 
 export default function Burger({isBurgerOpen, setBurger}) {
   return (
-    <div className="burger-menu cursor-pointer relative z-10" onClick={() => setBurger(!isBurgerOpen)}>
+    <div className="burger-menu cursor-pointer relative z-10 md:hidden" onClick={() => setBurger(!isBurgerOpen)}>
       {              
         isBurgerOpen ?
         <div className='burger-menu-icon-close'>

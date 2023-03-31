@@ -12,15 +12,13 @@ export default function Technology() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentTechnology, setCurrentTechnology ] = useState('')
 
-  console.log(technology)
-  console.log(currentTechnology)
 
   useEffect(() => {
     setCurrentTechnology(technology[currentIndex])
   }, [currentIndex])
 
   return (
-    <section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen'>
+    <section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px]'>
       
       <Heading title='Space launch 101' order='03' />
       <HeroTechnology data={currentTechnology} />

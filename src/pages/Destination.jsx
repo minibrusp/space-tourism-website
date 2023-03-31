@@ -22,7 +22,7 @@ export default function DestinationLayout() {
 
 
   return (
-    <section className='bg-backgroundDestination bg-cover bg-center h-full pt-[100px]'>
+    <section className='bg-backgroundDestination bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundDestinationTablet md:pt-[136px] md:pb-[62px]'>
       
       <Heading title='Pick your destination' order='01' />
 

@@ -7,7 +7,7 @@ export function TabDestination({ data, currentData, setCurrentDataIndex }) {
   return (
     <nav className='mb-[34px]'>
         <form 
-          className='uppercase text-sm tracking-[2.36px] font-barlowCondensed text-primary flex flex-row justify-center items-center gap-[26px]' 
+          className='uppercase text-sm tracking-[2.36px] font-barlowCondensed text-primary flex flex-row justify-center items-center gap-[26px] md:text-base md:tracking-[2.7px]' 
         >
 
           {
@@ -94,7 +94,7 @@ export function TabTechnology({ data, currentData, setCurrentDataIndex}) {
             data ? data.map((destination, index) => (
               <label 
                 key={destination.name} 
-                className=" w-[40px] h-[40px] cursor-pointer"
+                className=" w-[40px] h-[40px] cursor-pointer md:w-[60px] md:h-[60px]"
               >
                 <input 
                   type="radio" 
@@ -107,8 +107,9 @@ export function TabTechnology({ data, currentData, setCurrentDataIndex}) {
                 />
                 <label 
                   htmlFor={destination.name} 
-                  className={`cursor-pointer border relative w-full h-full flex justify-center items-center rounded-[100%] peer-checked:bg-white peer-checked:text-secondary`}
-                >{index + 1}
+                  className={`cursor-pointer border border-white/25 relative w-full h-full flex justify-center items-center rounded-[100%] peer-checked:bg-white/100 peer-checked:text-secondary md:text-2xl md:tracking-[1.5px]`}
+                >
+                  {index + 1}
                 </label>
               </label>
   
