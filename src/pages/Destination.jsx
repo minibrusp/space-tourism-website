@@ -13,9 +13,36 @@ export default function DestinationLayout() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [currentDestination, setCurrentDestination ] = useState('')
 
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
   useEffect(() => {
     setCurrentDestination(destinations[currentIndex])
   }, [currentIndex])
+
+  function handleTouchStart(e) {
+    setTouchStart(e.targetTouches[0].clientX);
+}
+
+function handleTouchMove(e) {
+    setTouchEnd(e.targetTouches[0].clientX);
+}
+
+function handleTouchEnd() {
+    if (touchStart - touchEnd > 150) {
+        // do your stuff here for left swipe
+        // moveSliderRight();
+        if(currentIndex == 0) return
+        setCurrentIndex(prev => prev - 1)
+    }
+
+    if (touchStart - touchEnd < -150) {
+        // do your stuff here for right swipe
+        // moveSliderLeft();
+        if(currentIndex == (destinations.length - 1)) return
+        setCurrentIndex(prev => prev + 1)
+    }
+}
 
   
 
@@ -24,13 +51,22 @@ export default function DestinationLayout() {
   return (
     <section className='bg-backgroundDestination bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundDestinationTablet md:pt-[136px] md:pb-[62px]'>
       
-      <Heading title='Pick your destination' order='01' />
+        <Heading title='Pick your destination' order='01' />
+      <div 
+        onTouchStart={touchStartEvent => handleTouchStart(touchStartEvent)}
+        onTouchMove={touchMoveEvent => handleTouchMove(touchMoveEvent)}
+        onTouchEnd={() => handleTouchEnd()}
+      >
 
-      <HeroDestination data={currentDestination} />
+        <HeroDestination data={currentDestination} />
 
-      <TabDestination data={destinations} currentData={currentDestination} setCurrentDataIndex={setCurrentIndex} />
+        <TabDestination data={destinations} currentData={currentDestination} setCurrentDataIndex={setCurrentIndex} />
 
-      <DescriptionDestination currentData={currentDestination} />
+        <DescriptionDestination currentData={currentDestination} />
+
+
+      </div>
+      
 
       
     </section>

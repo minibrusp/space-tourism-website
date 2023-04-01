@@ -13,7 +13,32 @@ export default function Crew() {
   const [ currentIndex, setCurrentIndex ] = useState(0)
   const [ currentCrew, setCurrentCrew ] = useState('')
 
-  
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  function handleTouchStart(e) {
+      setTouchStart(e.targetTouches[0].clientX);
+  }
+
+  function handleTouchMove(e) {
+      setTouchEnd(e.targetTouches[0].clientX);
+  }
+
+  function handleTouchEnd() {
+      if (touchStart - touchEnd > 150) {
+          // do your stuff here for left swipe
+          // moveSliderRight();
+          if(currentIndex == 0) return
+          setCurrentIndex(prev => prev - 1)
+      }
+
+      if (touchStart - touchEnd < -150) {
+          // do your stuff here for right swipe
+          // moveSliderLeft();
+          if(currentIndex == (crews.length - 1)) return
+          setCurrentIndex(prev => prev + 1)
+      }
+  }
 
   useEffect(() => {
     setCurrentCrew(crews[currentIndex])
@@ -26,7 +51,9 @@ export default function Crew() {
       <Heading title='Meet your crew' order='02' />
 
       <div className=" md:flex md:justify-center md:items-center md:flex-col-reverse md:gap-10" 
-        
+        onTouchStart={e => handleTouchStart(e)}
+        onTouchMove={e => handleTouchMove(e)}
+        onTouchEnd={() => handleTouchEnd()}
       >
         <HeroCrew data={currentCrew} />
         <TabCrew data={crews} currentData={currentCrew} setCurrentDataIndex={setCurrentIndex} />

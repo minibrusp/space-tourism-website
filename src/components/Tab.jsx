@@ -1,7 +1,7 @@
 export function TabDestination({ data, currentData, setCurrentDataIndex }) {
 
   const handleFormChange = (e) => {
-    setCurrentDataIndex(e.target.value)
+    setCurrentDataIndex(Number(e.target.value))
   }
 
   return (
@@ -20,7 +20,10 @@ export function TabDestination({ data, currentData, setCurrentDataIndex }) {
                   value={index} 
                   className="peer hidden" 
                   checked={currentData.name == destination.name ? true : false}
-                  onChange={handleFormChange} 
+                  onChange={handleFormChange}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchMove={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()} 
                 />
                 <label 
                   htmlFor={destination.name} 
@@ -42,7 +45,7 @@ export function TabDestination({ data, currentData, setCurrentDataIndex }) {
 export function TabCrew({ data, currentData, setCurrentDataIndex }) {
 
   const handleFormChange = (e) => {
-    setCurrentDataIndex(e.target.value)
+    setCurrentDataIndex(Number(e.target.value))
   }
 
   return (
@@ -62,6 +65,9 @@ export function TabCrew({ data, currentData, setCurrentDataIndex }) {
                 className="peer hidden" 
                 checked={currentData.name == crew.name ? true : false}
                 onChange={handleFormChange} 
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchMove={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()} 
               />
               <label 
                 htmlFor={crew.name} 
@@ -81,7 +87,7 @@ export function TabCrew({ data, currentData, setCurrentDataIndex }) {
 export function TabTechnology({ data, currentData, setCurrentDataIndex}) {
 
   const handleFormChange = (e) => {
-    setCurrentDataIndex(e.target.value)
+    setCurrentDataIndex(Number(e.target.value))
   }
 
   return (
@@ -103,7 +109,10 @@ export function TabTechnology({ data, currentData, setCurrentDataIndex}) {
                   value={index} 
                   className="peer hidden" 
                   checked={currentData.name == destination.name ? true : false}
-                  onChange={handleFormChange} 
+                  onChange={handleFormChange}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchMove={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()}
                 />
                 <label 
                   htmlFor={destination.name} 
