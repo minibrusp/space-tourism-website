@@ -49,20 +49,24 @@ function handleTouchEnd() {
 
 
   return (
-    <section className='bg-backgroundDestination bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundDestinationTablet md:pt-[136px] md:pb-[62px]'>
+    <section className='bg-backgroundDestination bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundDestinationTablet md:pt-[136px] md:pb-[62px] lg:bg-backgroundDestinationDesktop lg:pt-[190px] xl:px-[83.2px] desktop:px-[11.5783vw]'>
       
         <Heading title='Pick your destination' order='01' />
       <div 
         onTouchStart={touchStartEvent => handleTouchStart(touchStartEvent)}
         onTouchMove={touchMoveEvent => handleTouchMove(touchMoveEvent)}
         onTouchEnd={() => handleTouchEnd()}
+        className='lg:flex lg:justify-center lg:items-center lg:px-6' 
       >
 
         <HeroDestination data={currentDestination} />
 
-        <TabDestination data={destinations} currentData={currentDestination} setCurrentDataIndex={setCurrentIndex} />
+        <div className=''>
+          <TabDestination data={destinations} currentData={currentDestination} setCurrentDataIndex={setCurrentIndex} />
 
-        <DescriptionDestination currentData={currentDestination} />
+          <DescriptionDestination currentData={currentDestination} />
+        </div>
+
 
 
       </div>

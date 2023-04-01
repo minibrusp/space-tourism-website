@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Heading({ title, order }) {
   return (
-    <h1 className='font-barlowCondensed tracking-[2.7px] text-white uppercase mb-8 md:text-left md:ml-9 md:text-xl md:tracking-[3.38px] md:mb-[60px]'>
+    <h1 className='font-barlowCondensed tracking-[2.7px] text-white uppercase mb-8 md:text-left md:ml-9 md:text-xl md:tracking-[3.38px] md:mb-[60px] desktop:ml-0 desktop:text-[28px] desktop:mb-[30px]'>
         <span className='mr-4 opacity-25 font-bold'>{ order }</span>
           <span>
             { title }

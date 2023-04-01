@@ -46,18 +46,21 @@ export default function Crew() {
 
 
   return (
-    <section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundCrewTablet md:pt-[136px]'>
+    <section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundCrewTablet md:pt-[136px] lg:pt-[190px] lg:bg-backgroundCrewDesktop xl:px-[83.2px] desktop:px-[11.5783vw]'>
       
       <Heading title='Meet your crew' order='02' />
 
-      <div className=" md:flex md:justify-center md:items-center md:flex-col-reverse md:gap-10" 
+      <div className=" md:flex md:justify-s md:items-center md:flex-col-reverse md:gap-10 lg:justify-between lg:flex-row-reverse lg:mx-9 desktop:mx-0 desktop:gap-0" 
         onTouchStart={e => handleTouchStart(e)}
         onTouchMove={e => handleTouchMove(e)}
         onTouchEnd={() => handleTouchEnd()}
       >
         <HeroCrew data={currentCrew} />
-        <TabCrew data={crews} currentData={currentCrew} setCurrentDataIndex={setCurrentIndex} />
-        <DescriptionCrew currentData={currentCrew} />
+        <div className="lg:flex lg:justify-center lg:items-start lg:flex-col-reverse lg:gap-6 lg:text-left desktop:gap-[167px]">
+          <TabCrew data={crews} currentData={currentCrew} setCurrentDataIndex={setCurrentIndex} />
+          <DescriptionCrew currentData={currentCrew} />
+
+        </div>
       </div>
 
       

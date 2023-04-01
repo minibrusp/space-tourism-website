@@ -45,7 +45,7 @@ function handleTouchEnd() {
   }, [currentIndex])
 
   return (
-    <section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px]'>
+    <section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px] lg:bg-backgroundTechnologyDesktop lg:pb-0 lg:pt-[190px] xl:pl-[83.2px] '>
       
       <Heading title='Space launch 101' order='03' />
 
@@ -53,12 +53,15 @@ function handleTouchEnd() {
         onTouchStart={touchStartEvent => handleTouchStart(touchStartEvent)}
         onTouchMove={touchMoveEvent => handleTouchMove(touchMoveEvent)}
         onTouchEnd={() => handleTouchEnd()}
+        className="lg:flex lg:justify-center lg:items-center lg:flex-row-reverse lg:ml-9"
       >
         <HeroTechnology data={currentTechnology} />
         
-        <TabTechnology data={technology} currentData={currentTechnology} setCurrentDataIndex={setCurrentIndex} />
+        <div className="lg:flex lg:justify-center lg:items-center lg:flex-row">
+          <TabTechnology data={technology} currentData={currentTechnology} setCurrentDataIndex={setCurrentIndex} />
 
-        <DescriptionTechonology currentData={currentTechnology} />
+          <DescriptionTechonology currentData={currentTechnology} />
+        </div>
       </div>
 
     </section>

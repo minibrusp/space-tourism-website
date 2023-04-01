@@ -16,7 +16,7 @@ export function TabDestination({ data, currentData, setCurrentDataIndex }) {
   return (
     <nav className='mb-[34px]'>
         <form 
-          className='uppercase text-sm tracking-[2.36px] font-barlowCondensed text-primary flex flex-row justify-center items-center gap-[26px] md:text-base md:tracking-[2.7px]' 
+          className='uppercase text-sm tracking-[2.36px] font-barlowCondensed text-primary flex flex-row justify-center items-center gap-[26px] md:text-base md:tracking-[2.7px] lg:justify-start lg:px-6' 
         >
 
           {
@@ -36,7 +36,7 @@ export function TabDestination({ data, currentData, setCurrentDataIndex }) {
                 />
                 <label 
                   htmlFor={destination.name} 
-                  className={`cursor-pointer relative after:absolute after:left-0 after:bottom-[-11px] after:h-1 after:w-full after:bg-white after:block after:opacity-0 peer-checked:text-white peer-checked:after:opacity-100`}
+                  className={`cursor-pointer relative after:absolute after:left-0 after:bottom-[-11px] after:h-1 after:w-full after:bg-white after:block after:opacity-0 hover:after:opacity-[50%] after:transition-opacity after:duration-500 peer-checked:text-white peer-checked:after:opacity-100`}
                   tabIndex="0"
                   onKeyDown={handleKeyDown}
                 >{destination.name}
@@ -71,7 +71,7 @@ export function TabCrew({ data, currentData, setCurrentDataIndex }) {
   return (
     <nav className='mb-[26px]'>
       <form 
-        className='uppercase text-sm tracking-[2.36px] font-barlowCondensed text-primary flex flex-row justify-center items-center gap-4'
+        className='uppercase text-sm tracking-[2.36px] font-barlowCondensed text-primary flex flex-row justify-center items-center gap-4 lg:ml-6 xl:ml-0'
       >
 
         {
@@ -91,7 +91,7 @@ export function TabCrew({ data, currentData, setCurrentDataIndex }) {
               />
               <label 
                 htmlFor={crew.name} 
-                className={`cursor-pointer relative flex w-[10px] h-[10px] bg-white opacity-[17.44%] hover:opacity-[50.01%] focus-visible:opacity-[50.01%] focus-visible:outline-none rounded-full peer-checked:opacity-100`}
+                className={`cursor-pointer relative flex w-[10px] h-[10px] bg-white opacity-[17.44%] hover:opacity-[50.01%] focus-visible:opacity-[50.01%] focus-visible:outline-none rounded-full peer-checked:opacity-100 desktop:w-[15px] desktop:h-[15px]`}
                 tabIndex="0"
                 onKeyDown={handleKeyDown}
               />
@@ -124,14 +124,14 @@ export function TabTechnology({ data, currentData, setCurrentDataIndex}) {
   return (
     <nav className='mb-[25px]'>
         <form 
-          className='uppercase tracking-[1px] font-bellefair text-primary flex flex-row justify-center items-center gap-[16px]' 
+          className='uppercase tracking-[1px] font-bellefair text-primary flex flex-row justify-center items-center gap-[16px] lg:flex-col desktop:gap-[32px]' 
         >
 
           {
             data ? data.map((technology, index) => (
               <label 
                 key={technology.name} 
-                className=" w-[40px] h-[40px] cursor-pointer md:w-[60px] md:h-[60px]"
+                className=" w-[40px] h-[40px] cursor-pointer md:w-[60px] md:h-[60px] desktop:h-[80px] desktop:w-[80px]"
               >
                 <input 
                   type="radio" 
@@ -147,7 +147,7 @@ export function TabTechnology({ data, currentData, setCurrentDataIndex}) {
                 />
                 <label 
                   htmlFor={technology.name} 
-                  className={`cursor-pointer border border-white/25 hover:border-white relative w-full h-full flex justify-center items-center rounded-[100%] peer-checked:bg-white/100 peer-checked:text-secondary md:text-2xl md:tracking-[1.5px]`}
+                  className={`cursor-pointer border border-white/25 hover:border-white relative w-full h-full flex justify-center items-center rounded-[100%] peer-checked:bg-white/100 peer-checked:text-secondary md:text-2xl md:tracking-[1.5px] desktop:h-[80px] desktop:w-[80px]`}
                   tabIndex="0"
                   onKeyDown={handleKeyDown}
                 >
