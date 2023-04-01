@@ -1,11 +1,35 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 // components
 import Button from '../components/Button'
 
+const containerVariants = {
+  hidden: {
+    x: '100vw'
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring', 
+      delay: 0.5, 
+    }
+  },
+  exit: {
+    x: '-100vh',
+    transition: { ease: 'easeInOut' }
+  }
+}
+
 export default function Home() {
   return (
-    <section className='p-6 pt-[112px] bg-backgroundHome bg-cover bg-center min-h-screen md:bg-backgroundHomeTablet md:pt-[202px] lg:bg-backgroundHomeDesktop lg:flex lg:justify-between lg:items-center lg:px-[8vw] desktop:px-[11.4583vw]'>
+    <motion.section className='p-6 pt-[112px] bg-backgroundHome bg-cover bg-center min-h-screen md:bg-backgroundHomeTablet md:pt-[202px] lg:bg-backgroundHomeDesktop lg:flex lg:justify-between lg:items-center lg:px-[8vw] desktop:px-[11.4583vw]'
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       
       <div className='lg:text-left'>
         <h1 className='font-barlowCondensed tracking-[0.16875rem] text-primary uppercase md:text-xl lg:text-[28px] lg:tracking-[4.72px]'>So, you want to travel to 
@@ -18,6 +42,6 @@ export default function Home() {
 
       <Button />
       
-    </section>
+    </motion.section>
   )
 }

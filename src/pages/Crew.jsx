@@ -1,11 +1,33 @@
 import { useState, useEffect } from "react"
 import { useLoaderData } from "react-router-dom"
+import { motion } from 'framer-motion'
 
 // components 
 import Heading from "../components/Heading"
 import { HeroCrew } from "../components/Hero"
 import { TabCrew } from "../components/Tab"
 import { DescriptionCrew } from "../components/Description"
+
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw'
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'linear', 
+      delay: 0.5, 
+    }
+  },
+  exit: {
+    x: '-100vh',
+    transition: { ease: 'easeInOut' }
+  }
+}
+
 
 export default function Crew() {
 
@@ -46,7 +68,12 @@ export default function Crew() {
 
 
   return (
-    <section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundCrewTablet md:pt-[136px] lg:pt-[190px] lg:bg-backgroundCrewDesktop xl:px-[83.2px] desktop:px-[11.5783vw]'>
+    <motion.section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundCrewTablet md:pt-[136px] lg:pt-[190px] lg:bg-backgroundCrewDesktop xl:px-[83.2px] desktop:px-[11.5783vw]'
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       
       <Heading title='Meet your crew' order='02' />
 
@@ -66,7 +93,7 @@ export default function Crew() {
       
 
 
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,11 +1,31 @@
 import { useLoaderData } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 
 // components
 import Heading from "../components/Heading"
 import { HeroTechnology } from "../components/Hero"
 import { TabTechnology } from "../components/Tab"
 import { DescriptionTechonology } from "../components/Description"
+
+const containerVariants = {
+  hidden: {
+    x: '100vw'
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring', 
+      delay: 0.5, 
+    }
+  },
+  exit: {
+    x: '-100vh',
+    transition: { ease: 'easeInOut' }
+  }
+}
+
 
 export default function Technology() {
   const technology = useLoaderData()
@@ -45,7 +65,12 @@ function handleTouchEnd() {
   }, [currentIndex])
 
   return (
-    <section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px] lg:bg-backgroundTechnologyDesktop lg:pb-0 lg:pt-[190px] xl:pl-[83.2px] '>
+    <motion.section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px] lg:bg-backgroundTechnologyDesktop lg:pb-0 lg:pt-[190px] xl:pl-[83.2px] '
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       
       <Heading title='Space launch 101' order='03' />
 
@@ -64,7 +89,7 @@ function handleTouchEnd() {
         </div>
       </div>
 
-    </section>
+    </motion.section>
   )
 }
 

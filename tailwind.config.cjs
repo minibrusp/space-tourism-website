@@ -31,6 +31,7 @@ module.exports = {
         backgroundTechnology: "url('assets/technology/background-technology-mobile.jpg')",
         backgroundTechnologyTablet: "url('assets/technology/background-technology-tablet.jpg')",
         backgroundTechnologyDesktop: "url('assets/technology/background-technology-desktop.jpg')",
+        backgroundMain: "url('assets/shared/main-layout.jpg')",
       },
       screens: {
         'desktop': '1440px',

@@ -1,12 +1,55 @@
+import { motion } from 'framer-motion'
+
 export function HeroDestination({ data }) {
+
+  const imgContainerVariants = {
+    initial: {
+      scale: 0,
+    },
+    animate: {
+      scale: 1,
+      transition: { delay: .5, duration: 3 }
+    },
+    exit: {
+      x: '-100vh',
+      transition: { ease: 'easeInOut' }
+    }
+  }
+
+  const imgVariants = {
+    initial: {
+      rotate: 10,
+    },
+    animate: {
+      rotate: 0,
+      transition: { delay: 2.5, duration: 5 }
+    },
+    exit: {
+      x: '-100vh',
+      transition: { ease: 'easeInOut' }
+    }
+  }
+
   return (
-    <div className='hero w-fit h-fit mx-auto my-4 flex justify-center items-center mb-[26px] md:mb-[53px]'>
+    <motion.div className='hero w-fit h-fit mx-auto my-4 flex justify-center items-center mb-[26px] md:mb-[53px]'
+      variants={imgContainerVariants}
+      initial="initial"
+      animate="animate"
+    >
       {
         data 
-          ? <img className='w-[170px] h-[170px] mx-auto md:w-[300px] md:h-[300px] lg:w-[445px] lg:h-[445px]' src={data.images.png} alt={`photo of ${data.name}`} />
+          ? <motion.img 
+              className='w-[170px] h-[170px] mx-auto md:w-[300px] md:h-[300px] lg:w-[445px] lg:h-[445px]' 
+              src={data.images.png} 
+              alt={`photo of ${data.name}`}
+              variants={imgVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit" 
+            />
           : null
       }
-    </div>
+    </motion.div>
   )
 }
 

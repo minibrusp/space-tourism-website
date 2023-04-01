@@ -4,6 +4,7 @@ import {
   createRoutesFromElements,
   RouterProvider
 } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 
 // Pages 
 import Home from './pages/Home'
@@ -28,6 +29,8 @@ const router = createBrowserRouter(
 
 export default function App() {
   return (
-    <RouterProvider router={router} />
+    <AnimatePresence mode='sync' >
+      <RouterProvider router={router} />
+    </AnimatePresence>
   )
 }

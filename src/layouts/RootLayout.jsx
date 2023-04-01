@@ -11,7 +11,7 @@ function RootLayout() {
   
 
   return (
-    <div className="App text-primary">
+    <div className="App text-primary bg-black bg-backgroundMain bg-repeat">
       <header>
         <NavBar />
       </header>
