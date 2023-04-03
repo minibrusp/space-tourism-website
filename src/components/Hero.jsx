@@ -31,10 +31,6 @@ export function HeroDestination({ data, current }) {
     ]
   }, [])
 
-  useEffect(() => {
-    console.log(`images rendered`)
-  },[images])
-
   const imgContainerVariants = {
     initial: {
       scale: 0,
@@ -127,8 +123,6 @@ export function HeroTechnology({ data, current }) {
       },
     ]
   }, [])
-
-  console.log(images)
 
   return (
     <div className="text-center mb-9 block w-full md:mb-14">
