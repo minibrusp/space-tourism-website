@@ -21,9 +21,11 @@
 -   Mobile-first workflow
 -   JSONBIN for [API](https://jsonbin.io/)
 
-### Issues
+### Issues remaining
 
 - Theres an issue with framer-motion with router v6.8 
 - exit animations
 - will look back to it. 
+- 404 page on vercel 
+- Layout Shifts and Overflow issues
 
