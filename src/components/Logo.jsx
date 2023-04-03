@@ -1,5 +1,5 @@
 import React from 'react'
-import homeLogo from '../assets/shared/Logo.svg'
+import homeLogo from '../assets/shared/logo.svg'
 import { Link } from 'react-router-dom'
 
 function Logo() {
