@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+
+// components 
 import Heading from '../components/Heading'
+import { Button404 } from '../components/Button'
 
 // assets
 import astronautImg from '../assets/404/mirage-astronaut.png'
-import Button from '../components/Button'
 
 
 
@@ -42,7 +44,7 @@ export default function DestinationLayout() {
 
       <img className='pb-4 md:p-0' src={astronautImg} alt="lost astronaut" />
 
-      <Button text="Go Back" destination="/" size="small"/>
+      <Button404 text="Go Back" destination="/" />
       
 
     </div>

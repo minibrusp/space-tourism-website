@@ -40,7 +40,7 @@ export default function Home() {
         <p className='leading-[25px] mx-auto max-w-[445px] md:leading-7 lg:m-0 lg:leading-[32px] lg:text-lg'>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
       </div>
 
-      <Button text="Explore" destination="destination" size="large" />
+      <Button text="Explore" destination="destination" />
       
     </motion.section>
   )
