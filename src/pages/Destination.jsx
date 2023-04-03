@@ -87,7 +87,7 @@ function handleTouchEnd() {
         className='lg:flex lg:justify-center lg:items-center lg:px-6' 
       >
 
-        <HeroDestination data={currentDestination} />
+        <HeroDestination data={currentDestination} current={currentIndex} />
 
         <div className=''>
           <TabDestination data={destinations} currentData={currentDestination} setCurrentDataIndex={setCurrentIndex} />

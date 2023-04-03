@@ -80,7 +80,7 @@ function handleTouchEnd() {
         onTouchEnd={() => handleTouchEnd()}
         className="lg:flex lg:justify-center lg:items-center lg:flex-row-reverse lg:ml-9"
       >
-        <HeroTechnology data={currentTechnology} />
+        <HeroTechnology data={currentTechnology} current={currentIndex} />
         
         <div className="lg:flex lg:justify-center lg:items-center lg:flex-row">
           <TabTechnology data={technology} currentData={currentTechnology} setCurrentDataIndex={setCurrentIndex} />

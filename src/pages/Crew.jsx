@@ -82,7 +82,7 @@ export default function Crew() {
         onTouchMove={e => handleTouchMove(e)}
         onTouchEnd={() => handleTouchEnd()}
       >
-        <HeroCrew data={currentCrew} />
+        <HeroCrew data={currentCrew} current={currentIndex} />
         <div className="lg:flex lg:justify-center lg:items-start lg:flex-col-reverse lg:gap-6 lg:text-left desktop:gap-[167px]">
           <TabCrew data={crews} currentData={currentCrew} setCurrentDataIndex={setCurrentIndex} />
           <DescriptionCrew currentData={currentCrew} />
