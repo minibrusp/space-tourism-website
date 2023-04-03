@@ -1,4 +1,4 @@
-# Frontend Mentor - Space tourism website
+****# Frontend Mentor - Space tourism website
 
 ![Design preview for the Space tourism website coding challenge](./preview.jpg)
 
@@ -19,9 +19,11 @@
 -   FRAMER MOTION
 -   VITE
 -   Mobile-first workflow
+-   JSONBIN for [API](https://jsonbin.io/)
 
 ### Issues
 
 - Theres an issue with framer-motion with router v6.8 
 - exit animations
-- will look back to it.  
+- will look back to it. 
+

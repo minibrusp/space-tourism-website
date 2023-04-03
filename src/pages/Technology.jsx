@@ -93,8 +93,28 @@ function handleTouchEnd() {
   )
 }
 
+// loader function 
+// export const TechnologyLoader = async () => {
+//   const res = await fetch('http://localhost:3000/technology')
+
+//   if(!res.ok) {
+//     throw Error('Could not find that career')
+//   }
+
+//   return res.json()
+// }
+
 export const TechnologyLoader = async () => {
-  const res = await fetch('http://localhost:3000/technology')
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${import.meta.env.VITE_APP_BIN_ID}/latest`, {
+    method: 'GET',
+    headers: {
+      'X-Master-Key': import.meta.env.VITE_MASTER_KEY,
+      'Content-Type': 'application/json',
+      'X-Bin-Meta': false,
+      'X-JSON-Path': '$.technology.*'
+      
+    }
+  })
 
   if(!res.ok) {
     throw Error('Could not find that career')

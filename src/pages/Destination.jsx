@@ -9,6 +9,8 @@ import { DescriptionDestination } from '../components/Description'
 import { TabDestination } from '../components/Tab'
 
 
+
+
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -66,10 +68,6 @@ function handleTouchEnd() {
     }
 }
 
-  
-
-
-
   return (
     <motion.section className='bg-backgroundDestination bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundDestinationTablet md:pt-[136px] md:pb-[62px] lg:bg-backgroundDestinationDesktop lg:pt-[190px] xl:px-[83.2px] desktop:px-[11.5783vw]'
       variants={containerVariants}
@@ -79,7 +77,7 @@ function handleTouchEnd() {
     
     >
       
-        <Heading title='Pick your destination' order='01' />
+      <Heading title='Pick your destination' order='01' />
       <div 
         onTouchStart={touchStartEvent => handleTouchStart(touchStartEvent)}
         onTouchMove={touchMoveEvent => handleTouchMove(touchMoveEvent)}
@@ -106,8 +104,28 @@ function handleTouchEnd() {
 }
 
 // loader function 
+// export const DestinationLoader = async () => {
+//   const res = await fetch('http://localhost:3000/destinations')
+
+//   if(!res.ok) {
+//     throw Error('Could not find that career')
+//   }
+
+//   return res.json()
+// }
+
+
 export const DestinationLoader = async () => {
-  const res = await fetch('http://localhost:3000/destinations')
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${import.meta.env.VITE_APP_BIN_ID}/latest`, {
+    method: 'GET',
+    headers: {
+      'X-Master-Key': import.meta.env.VITE_MASTER_KEY,
+      'Content-Type': 'application/json',
+      'X-Bin-Meta': false,
+      'X-JSON-Path': '$.destinations.*'
+      
+    }
+  })
 
   if(!res.ok) {
     throw Error('Could not find that career')
