@@ -85,7 +85,7 @@ function handleTouchEnd() {
         <div className="lg:flex lg:justify-center lg:items-center lg:flex-row">
           <TabTechnology data={technology} currentData={currentTechnology} setCurrentDataIndex={setCurrentIndex} />
 
-          <DescriptionTechonology currentData={currentTechnology} />
+          <DescriptionTechonology currentData={currentTechnology} current={currentIndex} />
         </div>
       </div>
 

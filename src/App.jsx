@@ -2,7 +2,8 @@ import {
   createBrowserRouter,
   Route,
   createRoutesFromElements,
-  RouterProvider
+  RouterProvider,
+  useLocation
 } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
@@ -19,7 +20,7 @@ import RootLayout from './layouts/RootLayout'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<RootLayout />} errorElement>
+    <Route path='/' element={<RootLayout />} >
       <Route index element={<Home />} />
       <Route path='destination' element={<Destination />} loader={DestinationLoader} />
       <Route path='crew' element={<Crew />} loader={CrewLoader} />
@@ -32,8 +33,8 @@ const router = createBrowserRouter(
 
 export default function App() {
   return (
-    <AnimatePresence mode='sync' >
-      <RouterProvider router={router} />
+    <AnimatePresence mode='wait'>
+      <RouterProvider router={router}  />
     </AnimatePresence>
   )
 }

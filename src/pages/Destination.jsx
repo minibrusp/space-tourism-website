@@ -92,7 +92,7 @@ function handleTouchEnd() {
         <div className=''>
           <TabDestination data={destinations} currentData={currentDestination} setCurrentDataIndex={setCurrentIndex} />
 
-          <DescriptionDestination currentData={currentDestination} />
+          <DescriptionDestination currentData={currentDestination} current={currentIndex} />
         </div>
 
 
