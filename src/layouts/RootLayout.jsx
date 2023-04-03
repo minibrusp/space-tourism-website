@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 
 function RootLayout() {
@@ -11,7 +12,7 @@ function RootLayout() {
   
 
   return (
-    <div className="App text-primary bg-black bg-backgroundMain bg-repeat">
+    <div className="App relative text-primary bg-black bg-backgroundMain bg-repeat">
       <header>
         <NavBar />
       </header>
@@ -20,6 +21,7 @@ function RootLayout() {
         <Outlet />
       </main>
       
+      <Footer />
 
       
     </div>
