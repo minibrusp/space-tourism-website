@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useMemo } from 'react'
 
-// images 
+// assets 
 // destination 
 import moonImg from '../assets/destination/image-moon.webp'
 import marsImg from '../assets/destination/image-mars.webp'
@@ -60,7 +60,7 @@ export function HeroDestination({ data, current }) {
   }
 
   return (
-    <motion.div className='hero w-fit h-fit mx-auto my-4 flex justify-center items-center mb-[26px] md:mb-[53px]'
+    <motion.div key={current} className='hero w-fit h-fit mx-auto my-4 flex justify-center items-center mb-[26px] md:mb-[53px]'
       variants={imgContainerVariants}
       initial="initial"
       animate="animate"
