@@ -7,8 +7,8 @@
 
 ### Links
 
--   Solution URL: [here]()
--   Live Site URL: [here]()
+-   Solution URL: [here](https://www.frontendmentor.io/solutions/space-tourism-website-react-react-routerv6-tailwindcss-vite-framer-PMMIeJlQt-)
+-   Live Site URL: [here](https://space-tourism-website-red.vercel.app/)
 
 ### Built with
 
