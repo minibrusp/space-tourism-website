@@ -116,7 +116,7 @@ function handleTouchEnd() {
 
 
 export const DestinationLoader = async () => {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${import.meta.env.VITE_APP_BIN_ID}/latest`, {
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${import.meta.env.VITE_APP_BIN_ID}/latest1`, {
     method: 'GET',
     headers: {
       'X-Master-Key': import.meta.env.VITE_MASTER_KEY,
@@ -128,7 +128,7 @@ export const DestinationLoader = async () => {
   })
 
   if(!res.ok) {
-    throw Error('Could not find that career')
+    throw Error(res.status)
   }
 
   return res.json()
