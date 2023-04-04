@@ -116,7 +116,7 @@ function handleTouchEnd() {
 
 
 export const DestinationLoader = async () => {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${import.meta.env.VITE_APP_BIN_ID}/latest1`, {
+  const res = await fetch(`https://api.jsonbin.io/v3/b/${import.meta.env.VITE_APP_BIN_ID}/latest`, {
     method: 'GET',
     headers: {
       'X-Master-Key': import.meta.env.VITE_MASTER_KEY,
