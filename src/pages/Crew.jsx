@@ -68,7 +68,7 @@ export default function Crew() {
 
 
   return (
-    <motion.section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundCrewTablet md:pt-[136px] lg:pt-[190px] lg:bg-backgroundCrewDesktop xl:px-[83.2px] desktop:px-[11.5783vw]'
+    <motion.section className='bg-backgroundCrew bg-cover bg-center h-full pt-[100px] pb-8 min-h-screen md:bg-backgroundCrewTablet md:pt-[136px] lg:pt-[190px] lg:bg-backgroundCrewDesktop xl:px-[83.2px] desktop:px-[11.5783vw]'
       variants={containerVariants}
       initial="hidden"
       animate="visible"

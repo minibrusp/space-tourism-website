@@ -12,7 +12,7 @@ function RootLayout() {
   
 
   return (
-    <div className="App relative text-primary bg-black bg-backgroundMain bg-repeat">
+    <div className="App relative text-primary bg-black bg-backgroundMain bg-repeat overflow-x-hidden">
       <header>
         <NavBar />
       </header>

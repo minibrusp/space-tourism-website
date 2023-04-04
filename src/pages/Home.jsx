@@ -12,7 +12,7 @@ const containerVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring', 
+      type: 'linear', 
       delay: 0.5, 
     }
   },
@@ -24,7 +24,7 @@ const containerVariants = {
 
 export default function Home() {
   return (
-    <motion.section className='p-6 pt-[112px] bg-backgroundHome bg-cover bg-center min-h-screen md:bg-backgroundHomeTablet md:pt-[202px] lg:bg-backgroundHomeDesktop lg:flex lg:justify-between lg:items-center lg:px-[8vw] desktop:px-[11.4583vw]'
+    <motion.section className='p-6 pt-[112px] bg-backgroundHome bg-cover bg-center pb-8 min-h-screen md:bg-backgroundHomeTablet md:pt-[202px] lg:bg-backgroundHomeDesktop lg:flex lg:justify-between lg:items-center lg:px-[8vw] desktop:px-[11.4583vw]'
       variants={containerVariants}
       initial="hidden"
       animate="visible"

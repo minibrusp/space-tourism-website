@@ -16,7 +16,7 @@ const containerVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring', 
+      type: 'linear', 
       delay: 0.5, 
     }
   },
@@ -65,7 +65,7 @@ function handleTouchEnd() {
   }, [currentIndex])
 
   return (
-    <motion.section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px] lg:bg-backgroundTechnologyDesktop lg:pb-0 lg:pt-[190px] xl:pl-[83.2px] '
+    <motion.section className='bg-backgroundTechnology bg-cover bg-center h-full pt-[100px] pb-8 min-h-screen md:bg-backgroundTechnologyTablet md:pt-[136px] md:pb-[97px] lg:bg-backgroundTechnologyDesktop lg:pb-0 lg:pt-[190px] xl:pl-[83.2px] '
       variants={containerVariants}
       initial="hidden"
       animate="visible"
